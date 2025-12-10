@@ -1,4 +1,4 @@
-CREATE TABLE user_entity
+CREATE TABLE if NOT EXISTS user_entity
 (
     id            UUID NOT NULL,
     user_name     VARCHAR(255),
