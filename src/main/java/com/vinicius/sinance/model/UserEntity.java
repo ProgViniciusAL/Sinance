@@ -15,7 +15,6 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -31,5 +30,4 @@ public class UserEntity {
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-
 }

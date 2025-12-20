@@ -19,7 +19,6 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransactionEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -36,5 +35,4 @@ public class TransactionEntity {
     private String description;
 
     private LocalDateTime createdAt;
-
 }
