@@ -13,7 +13,6 @@ import java.util.UUID;
 @Table(name = "account")
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 public class AccountEntity {
     @Id
@@ -34,6 +33,10 @@ public class AccountEntity {
     private List<TransactionEntity> transaction = new ArrayList<>();
 
     private Boolean isActive;
+
+    public AccountEntity() {
+        this.setIsActive(true);
+    }
 
     public Boolean isAccountActive() {
         return this.isActive;
