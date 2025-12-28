@@ -1,11 +1,10 @@
 package com.vinicius.sinance.model;
 
+import com.vinicius.sinance.enums.AccountType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -21,9 +20,22 @@ public class AccountEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    private String name;
+
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private UserEntity user;
 
+    private BigDecimal current_balance;
+
+    @Enumerated(EnumType.STRING)
+    private AccountType account_type;
+
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<TransactionEntity> transaction = new ArrayList<>();
+
+    private Boolean isActive;
+
+    public Boolean isAccountActive() {
+        return this.isActive;
+    }
 }

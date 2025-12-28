@@ -1,7 +1,11 @@
 CREATE TABLE account
 (
-    id      UUID NOT NULL,
-    user_id UUID,
+    id              UUID NOT NULL,
+    name            VARCHAR(255),
+    user_id         UUID,
+    current_balance DECIMAL,
+    account_type    VARCHAR(255),
+    is_active       BOOLEAN,
     CONSTRAINT pk_account PRIMARY KEY (id)
 );
 
@@ -14,6 +18,16 @@ CREATE TABLE transaction
     description VARCHAR(255),
     created_at  TIMESTAMP WITHOUT TIME ZONE,
     CONSTRAINT pk_transaction PRIMARY KEY (id)
+);
+
+CREATE TABLE user_entity
+(
+    id            UUID NOT NULL,
+    user_name     VARCHAR(255),
+    user_email    VARCHAR(255),
+    password_hash VARCHAR(255),
+    created_at    TIMESTAMP WITHOUT TIME ZONE,
+    CONSTRAINT pk_user_entity PRIMARY KEY (id)
 );
 
 ALTER TABLE account
