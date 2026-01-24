@@ -1,5 +1,6 @@
 package com.vinicius.sinance.model;
 
+import com.vinicius.sinance.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,6 +32,10 @@ public class UserEntity implements UserDetails {
 
     @OneToMany(fetch = FetchType.LAZY)
     private Set<AccountEntity> accounts;
+
+    @Column(name = "user_role")
+    @Enumerated
+    private Role role;
 
     @Column(name = "password_hash")
     private String passwordHash;
