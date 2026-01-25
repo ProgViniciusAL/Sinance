@@ -1,4 +1,4 @@
 package com.vinicius.sinance.security.dto;
 
-public record RegisterResponse(String username, String email) {
+public record RegisterResponse(String message) {
 }

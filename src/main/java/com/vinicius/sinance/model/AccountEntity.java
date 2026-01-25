@@ -24,10 +24,10 @@ public class AccountEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private UserEntity user;
 
-    private BigDecimal current_balance;
+    private BigDecimal currentBalance;
 
     @Enumerated(EnumType.STRING)
-    private AccountType account_type;
+    private AccountType accountType;
 
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<TransactionEntity> transaction = new ArrayList<>();

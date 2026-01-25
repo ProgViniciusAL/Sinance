@@ -30,6 +30,7 @@ public class UserEntity implements UserDetails {
     @Column(name = "user_email")
     private String email;
 
+    @Getter
     @OneToMany(fetch = FetchType.LAZY)
     private Set<AccountEntity> accounts;
 
@@ -38,7 +39,7 @@ public class UserEntity implements UserDetails {
     private Role role;
 
     @Column(name = "password_hash")
-    private String passwordHash;
+    private String password;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -50,7 +51,7 @@ public class UserEntity implements UserDetails {
 
     @Override
     public @Nullable String getPassword() {
-        return this.passwordHash;
+        return this.password;
     }
 
     @Override

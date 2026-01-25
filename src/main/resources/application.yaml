@@ -12,3 +12,8 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   flyway:
     enabled: true
+
+api:
+  security:
+    token:
+      secret: ${TOKEN_SECRET}

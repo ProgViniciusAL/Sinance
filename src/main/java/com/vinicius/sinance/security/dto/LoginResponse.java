@@ -1,4 +1,4 @@
 package com.vinicius.sinance.security.dto;
 
-public record LoginResponse(String email) {
+public record LoginResponse(String token) {
 }
