@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface IUserEntityRepository extends JpaRepository<UserEntity, UUID> {
+public interface UserEntityRepository extends JpaRepository<UserEntity, UUID> {
     Optional<UserDetails> findByEmail(String email);
 
     UserEntity getUserEntityByEmail(String email);

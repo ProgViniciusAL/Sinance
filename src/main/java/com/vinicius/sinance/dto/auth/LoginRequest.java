@@ -1,4 +1,4 @@
-package com.vinicius.sinance.security.dto;
+package com.vinicius.sinance.dto.auth;
 
 public record LoginRequest(String email, String password) {
 }

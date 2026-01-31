@@ -1,6 +1,6 @@
 package com.vinicius.sinance.security;
 
-import com.vinicius.sinance.repository.IUserEntityRepository;
+import com.vinicius.sinance.repository.UserEntityRepository;
 import org.jspecify.annotations.NullMarked;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private final IUserEntityRepository userEntityRepository;
+    private final UserEntityRepository userEntityRepository;
 
-    public CustomUserDetailsService(IUserEntityRepository userEntityRepository) {
+    public CustomUserDetailsService(UserEntityRepository userEntityRepository) {
         this.userEntityRepository = userEntityRepository;
     }
 

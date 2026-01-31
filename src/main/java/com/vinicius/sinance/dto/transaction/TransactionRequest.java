@@ -1,7 +1,6 @@
-package com.vinicius.sinance.model.dto;
+package com.vinicius.sinance.dto.transaction;
 
 import com.vinicius.sinance.enums.TransactionType;
-import com.vinicius.sinance.model.AccountEntity;
 
 import java.math.BigDecimal;
 

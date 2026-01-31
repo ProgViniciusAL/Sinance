@@ -1,7 +1,6 @@
-package com.vinicius.sinance.security;
+package com.vinicius.sinance.config;
 
-import com.vinicius.sinance.security.jwt.SecurityFilter;
-import org.hibernate.Session;
+import com.vinicius.sinance.security.SecurityFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

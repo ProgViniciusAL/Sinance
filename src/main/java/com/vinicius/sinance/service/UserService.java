@@ -1,10 +1,8 @@
 package com.vinicius.sinance.service;
 
 import com.vinicius.sinance.model.UserEntity;
-import com.vinicius.sinance.model.dto.UserResponse;
-import com.vinicius.sinance.repository.IUserEntityRepository;
-import com.vinicius.sinance.security.dto.RegisterRequest;
-import com.vinicius.sinance.security.dto.RegisterResponse;
+import com.vinicius.sinance.dto.user.UserResponse;
+import com.vinicius.sinance.repository.UserEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     @Autowired
-    private IUserEntityRepository userEntityRepository;
+    private UserEntityRepository userEntityRepository;
 
     public UserResponse save(UserEntity userEntity) {
         userEntityRepository.save(userEntity);

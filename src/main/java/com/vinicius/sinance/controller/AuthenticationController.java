@@ -1,19 +1,17 @@
-package com.vinicius.sinance.security.controller;
+package com.vinicius.sinance.controller;
 
 import com.vinicius.sinance.model.UserEntity;
-import com.vinicius.sinance.security.dto.LoginRequest;
-import com.vinicius.sinance.security.dto.LoginResponse;
-import com.vinicius.sinance.security.dto.RegisterRequest;
-import com.vinicius.sinance.security.dto.RegisterResponse;
-import com.vinicius.sinance.security.jwt.TokenService;
+import com.vinicius.sinance.dto.auth.LoginRequest;
+import com.vinicius.sinance.dto.auth.LoginResponse;
+import com.vinicius.sinance.dto.auth.RegisterRequest;
+import com.vinicius.sinance.dto.auth.RegisterResponse;
+import com.vinicius.sinance.security.TokenService;
 import com.vinicius.sinance.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;

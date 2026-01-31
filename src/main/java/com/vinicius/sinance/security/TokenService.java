@@ -1,4 +1,4 @@
-package com.vinicius.sinance.security.jwt;
+package com.vinicius.sinance.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-import java.util.Calendar;
 
 @Service
 public class TokenService {

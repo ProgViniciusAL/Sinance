@@ -1,6 +1,6 @@
-package com.vinicius.sinance.security.jwt;
+package com.vinicius.sinance.security;
 
-import com.vinicius.sinance.repository.IUserEntityRepository;
+import com.vinicius.sinance.repository.UserEntityRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,7 +23,7 @@ public class SecurityFilter extends OncePerRequestFilter {
     TokenService tokenService;
 
     @Autowired
-    IUserEntityRepository userEntityRepository;
+    UserEntityRepository userEntityRepository;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
