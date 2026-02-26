@@ -20,6 +20,7 @@ import java.util.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserEntity implements UserDetails {
+    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;

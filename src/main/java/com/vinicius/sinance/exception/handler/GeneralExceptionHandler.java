@@ -1,7 +1,6 @@
-package com.vinicius.sinance.exception;
+package com.vinicius.sinance.exception.handler;
 
-import org.apache.coyote.Response;
-import org.springframework.data.crossstore.ChangeSetPersister;
+import com.vinicius.sinance.exception.AccountNotFound;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -22,8 +21,17 @@ public class GeneralExceptionHandler {
     @ExceptionHandler(UsernameNotFoundException.class)
     public ResponseEntity<String> handleUsernameNotFound() {
         return ResponseEntity
-                .status(HttpStatus.UNAUTHORIZED)
+                .status(HttpStatus.NOT_FOUND)
                 .body("Username Not Found");
     }
+
+    @ExceptionHandler(AccountNotFound.class)
+    public ResponseEntity<String> handleAccountNotFound() {
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body("Account Not Found");
+    }
+
+
 
 }
