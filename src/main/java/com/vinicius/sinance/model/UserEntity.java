@@ -2,6 +2,9 @@ package com.vinicius.sinance.model;
 
 import com.vinicius.sinance.enums.Role;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jdk.jfr.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,24 +28,22 @@ public class UserEntity implements UserDetails {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(name = "user_name")
+    @NotNull
+    @Pattern(regexp = "^[a-zA-Z0-9 ]*$")
     private String username;
 
-    @Column(name = "user_email")
+    @NotNull
+    @Pattern(regexp = "^[a-zA-Z0-9 ]*$")
     private String email;
 
-    @Getter
-    @OneToMany(fetch = FetchType.LAZY)
-    private Set<AccountEntity> accounts;
-
-    @Column(name = "user_role")
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Role role;
 
-    @Column(name = "password_hash")
-    private String password;
+    @NotNull
+    private String password_hash;
 
-    @Column(name = "created_at")
+    @NotNull
+    @Timestamp
     private LocalDateTime createdAt;
 
     @Override
@@ -52,7 +53,7 @@ public class UserEntity implements UserDetails {
 
     @Override
     public @Nullable String getPassword() {
-        return this.password;
+        return this.password_hash;
     }
 
     @Override
